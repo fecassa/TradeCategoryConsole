@@ -38,3 +38,5 @@ Your designmusttake into account category rules can be added/removed/modified an
 ## Solution
 
 ![alt text](https://github.com/fecassa/TradeCategoryConsole/blob/master/TradeCategoryConsole/img/cover.png?raw=true)
+
+## SQL Solution
