@@ -40,3 +40,25 @@ Your designmusttake into account category rules can be added/removed/modified an
 ![alt text](https://github.com/fecassa/TradeCategoryConsole/blob/master/TradeCategoryConsole/img/cover.png?raw=true)
 
 ## SQL Solution
+
+```sql
+CREATE TABLE Trade (
+    id int NOT NULL AUTO_INCREMENT,
+    Value double, 
+    ClientSelector CHAR(50) NOT NULL,
+     PRIMARY KEY (id)
+ );
+
+insert into Trade (Value, ClientSelector) values (2000000,'Private');
+insert into Trade (Value, ClientSelector) values (400000,'Public');
+insert into Trade (Value, ClientSelector) values (500000,'Public');
+insert into Trade (Value, ClientSelector) values (3000000,'Public');
+
+SELECT CASE
+  WHEN Value < 1000000 AND ClientSelector = UPPER('Public')  then 'LOWRISK'
+  WHEN Value > 1000000 AND ClientSelector = UPPER('Public')  then 'MEDIUMRISK'
+  WHEN Value > 1000000 AND ClientSelector = UPPER('Private')  then 'HIGHRISK'
+  ELSE 'UNDEFINED'
+END AS TRADECATEGORIES
+FROM TRADE
+```
